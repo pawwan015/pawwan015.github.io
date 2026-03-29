@@ -2,8 +2,6 @@
 <html>
 <head>
     <title>Pawan Kumar | Electrical Engineer</title>
-
-    <!-- IMPORTANT for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -18,15 +16,16 @@
             width: 90%;
             max-width: 1000px;
             margin: auto;
+            padding: 20px 0;
         }
 
         .header {
             text-align: center;
-            padding: 40px 10px;
+            padding: 30px 10px;
         }
 
         .header h1 {
-            font-size: 40px;
+            font-size: 36px;
             margin: 10px 0;
         }
 
@@ -53,7 +52,7 @@
         }
 
         .card h3 {
-            margin-top: 0;
+            margin: 0 0 10px;
         }
 
         .skills {
@@ -69,32 +68,26 @@
             font-size: 13px;
         }
 
-        /* 📱 MOBILE RESPONSIVE */
+        ul {
+            padding-left: 20px;
+        }
+
+        /* MOBILE */
         @media (max-width: 600px) {
-
             .header h1 {
-                font-size: 28px;
-            }
-
-            .header p {
-                font-size: 14px;
+                font-size: 26px;
             }
 
             h2 {
                 font-size: 18px;
             }
 
+            .header p {
+                font-size: 14px;
+            }
+
             .card {
                 padding: 12px;
-            }
-
-            .skills span {
-                font-size: 12px;
-                padding: 6px 10px;
-            }
-
-            body {
-                padding: 10px;
             }
         }
     </style>
@@ -104,51 +97,133 @@
 
 <div class="container">
 
+    <!-- HEADER -->
     <div class="header">
         <h1>B Pawan Kumar</h1>
         <p>Electrical & Electronics Engineer</p>
         <p>📍 Gurgaon | 📧 pawanbrao720@gmail.com</p>
     </div>
 
+    <!-- ABOUT -->
     <div class="section">
-        <h2>👨‍💼 About Me</h2>
+        <h2>About Me</h2>
         <div class="card">
-            <p>A motivated engineer with hands-on experience in industrial motor repair, diagnostics, and automation systems. Strong in troubleshooting and delivering high-quality repair results.</p>
+            <p>
+                A motivated and disciplined engineer with hands-on experience in industrial motor repair, diagnostics,
+                and automation systems. Proven ability to independently manage repair operations, troubleshoot complex
+                faults, and deliver high-quality results with a 95%+ success rate.
+            </p>
         </div>
     </div>
 
+    <!-- SKILLS -->
     <div class="section">
-        <h2>🛠 Core Skills</h2>
+        <h2>Core Skills</h2>
         <div class="skills">
-            <span>Motor Repair</span>
+            <span>Motor Repair (Servo/Spindle)</span>
             <span>Electrical Troubleshooting</span>
-            <span>PLC</span>
-            <span>SCADA</span>
+            <span>PLC S7-300 / S7-1200</span>
+            <span>SCADA (WinCC)</span>
             <span>Circuit Analysis</span>
+            <span>SAP S/4 HANA</span>
             <span>Automation</span>
-            <span>Testing Tools</span>
+            <span>Multimeter / Megger / Oscilloscope</span>
         </div>
     </div>
 
+    <!-- EXPERIENCE -->
     <div class="section">
-        <h2>💼 Experience</h2>
+        <h2>Experience</h2>
 
         <div class="card">
-            <h3>Deputy Engineer – FANUC India</h3>
-            <p>Managed 30+ motor repairs monthly with 95%+ success rate. Worked on encoders, windings, and diagnostics.</p>
+            <h3>Deputy Engineer – FANUC India (Present)</h3>
+            <ul>
+                <li>Handled 30+ servo & spindle motor repairs monthly</li>
+                <li>Complete ownership: dismantling → repair → testing → delivery</li>
+                <li>Maintained 95%+ first-time-right repair success rate</li>
+                <li>Worked on encoders, windings, bearings, brake systems, PCBs</li>
+                <li>Used oscilloscope, megger, multimeter for diagnostics</li>
+                <li>Collaborated with field engineers on complex issues</li>
+            </ul>
         </div>
 
         <div class="card">
-            <h3>Trainee Engineer</h3>
-            <p>Worked on FANUC systems, diagnostics, and electrical schematics.</p>
+            <h3>Trainee Engineer – FANUC India (2024–2025)</h3>
+            <ul>
+                <li>Trained on FANUC drives, motors & controllers</li>
+                <li>Performed component-level diagnostics and repair</li>
+                <li>Read electrical schematics and documentation</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Intern – FANUC India (2024)</h3>
+            <ul>
+                <li>Training on industrial repair tools & equipment</li>
+                <li>Learned safety protocols and repair workflow</li>
+            </ul>
         </div>
 
     </div>
 
+    <!-- PROJECTS -->
     <div class="section">
-        <h2>🎓 Education</h2>
+        <h2>Key Work Highlights</h2>
+
         <div class="card">
-            <p>Diploma in Electrical & Electronics Engineering</p>
+            <h3>Industrial Motor Repair System</h3>
+            <p><b>Problem:</b> Frequent motor failures</p>
+            <p><b>Action:</b> Diagnosed using testing tools</p>
+            <p><b>Solution:</b> Component-level repair</p>
+            <p><b>Result:</b> Improved reliability and reduced failures</p>
+        </div>
+
+        <div class="card">
+            <h3>PMC & Automation Troubleshooting</h3>
+            <p>Configured PMC systems and optimized machine performance.</p>
+        </div>
+
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <h2>Education</h2>
+
+        <div class="card">
+            <p><b>Diploma in Electrical & Electronics Engineering</b></p>
+            <p>Tata Steel Technical Institute – 74.4%</p>
+        </div>
+
+        <div class="card">
+            <p><b>Matriculation</b></p>
+            <p>Kerala Public School – 81.14%</p>
+        </div>
+
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section">
+        <h2>Certifications</h2>
+        <div class="card">
+            <ul>
+                <li>Wireman Control Panel (NSDC)</li>
+                <li>JobReady Employability Skills</li>
+                <li>Advance Project Management</li>
+                <li>Inspire Award (Jharkhand Govt)</li>
+                <li>VI Characteristics Test Panel Project</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SOFT SKILLS -->
+    <div class="section">
+        <h2>Soft Skills</h2>
+        <div class="skills">
+            <span>Ownership</span>
+            <span>Problem Solving</span>
+            <span>Time Management</span>
+            <span>Communication</span>
+            <span>Analytical Thinking</span>
         </div>
     </div>
 
