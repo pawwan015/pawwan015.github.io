@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>Pawan Kumar | Electrical Engineer</title>
+
+    <!-- IMPORTANT for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             margin: 0;
@@ -18,44 +22,80 @@
 
         .header {
             text-align: center;
-            padding: 40px 0;
+            padding: 40px 10px;
         }
 
         .header h1 {
-            font-size: 42px;
+            font-size: 40px;
+            margin: 10px 0;
         }
 
         .header p {
             color: #94a3b8;
+            font-size: 16px;
         }
 
         .section {
-            margin-top: 40px;
-        }
-
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .skills span {
-            display: inline-block;
-            background: #2563eb;
-            padding: 8px 12px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 14px;
+            margin-top: 30px;
         }
 
         h2 {
             border-bottom: 2px solid #334155;
             padding-bottom: 5px;
+            font-size: 22px;
         }
 
-        a {
-            color: #38bdf8;
+        .card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills span {
+            background: #2563eb;
+            padding: 8px 12px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 13px;
+        }
+
+        /* 📱 MOBILE RESPONSIVE */
+        @media (max-width: 600px) {
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .header p {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .card {
+                padding: 12px;
+            }
+
+            .skills span {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            body {
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -66,28 +106,27 @@
 
     <div class="header">
         <h1>B Pawan Kumar</h1>
-        <p>Electrical & Electronics Engineer | Motor Repair & Industrial Troubleshooting Specialist</p>
+        <p>Electrical & Electronics Engineer</p>
         <p>📍 Gurgaon | 📧 pawanbrao720@gmail.com</p>
     </div>
 
     <div class="section">
         <h2>👨‍💼 About Me</h2>
         <div class="card">
-            <p>A motivated and disciplined engineer with hands-on experience in industrial motor repair, diagnostics, and automation systems. Proven ability to independently manage repair operations, troubleshoot complex faults, and deliver high-quality results with a 95%+ success rate.</p>
+            <p>A motivated engineer with hands-on experience in industrial motor repair, diagnostics, and automation systems. Strong in troubleshooting and delivering high-quality repair results.</p>
         </div>
     </div>
 
     <div class="section">
         <h2>🛠 Core Skills</h2>
         <div class="skills">
-            <span>Motor Repair (Servo/Spindle)</span>
+            <span>Motor Repair</span>
             <span>Electrical Troubleshooting</span>
-            <span>PLC (S7-300 / S7-1200)</span>
-            <span>SCADA (WinCC)</span>
+            <span>PLC</span>
+            <span>SCADA</span>
             <span>Circuit Analysis</span>
-            <span>SAP S/4 HANA</span>
             <span>Automation</span>
-            <span>Multimeter / Megger / Oscilloscope</span>
+            <span>Testing Tools</span>
         </div>
     </div>
 
@@ -95,45 +134,13 @@
         <h2>💼 Experience</h2>
 
         <div class="card">
-            <h3>Deputy Engineer – FANUC India (Present)</h3>
-            <p>• Managed 30+ motor repairs monthly (servo & spindle)</p>
-            <p>• Complete ownership: dismantling → repair → testing → delivery</p>
-            <p>• Achieved 95%+ first-time-right repair rate</p>
-            <p>• Worked on encoders, windings, bearings, brake systems, PCBs</p>
-            <p>• Performed diagnostics using oscilloscope, megger & multimeter</p>
-            <p>• Collaborated with field engineers for complex fault resolution</p>
+            <h3>Deputy Engineer – FANUC India</h3>
+            <p>Managed 30+ motor repairs monthly with 95%+ success rate. Worked on encoders, windings, and diagnostics.</p>
         </div>
 
         <div class="card">
-            <h3>Trainee Engineer – FANUC India (2024–2025)</h3>
-            <p>• Trained on FANUC drives, motors & controllers</p>
-            <p>• Assisted in component-level repair & diagnostics</p>
-            <p>• Learned electrical schematics & industrial repair workflows</p>
-        </div>
-
-        <div class="card">
-            <h3>Intern – FANUC India (2024)</h3>
-            <p>• Training on industrial tools & testing equipment</p>
-            <p>• Learned safety protocols & repair processes</p>
-        </div>
-
-    </div>
-
-    <div class="section">
-        <h2>🚀 Key Work Highlights</h2>
-
-        <div class="card">
-            <h3>Industrial Motor Repair System</h3>
-            <p><b>Problem:</b> Frequent motor failures in industrial systems</p>
-            <p><b>Action:</b> Diagnosed faults using testing tools & component analysis</p>
-            <p><b>Solution:</b> Repaired components (encoders, windings, bearings)</p>
-            <p><b>Result:</b> Achieved reliable performance with high repair success rate</p>
-        </div>
-
-        <div class="card">
-            <h3>PMC & Automation Troubleshooting</h3>
-            <p><b>Work:</b> Configured PMC systems and MDI parameters</p>
-            <p><b>Outcome:</b> Improved machine functionality and reduced downtime</p>
+            <h3>Trainee Engineer</h3>
+            <p>Worked on FANUC systems, diagnostics, and electrical schematics.</p>
         </div>
 
     </div>
@@ -141,35 +148,7 @@
     <div class="section">
         <h2>🎓 Education</h2>
         <div class="card">
-            <p><b>Diploma in Electrical & Electronics Engineering</b></p>
-            <p>Tata Steel Technical Institute (2024) – 74.4%</p>
-        </div>
-
-        <div class="card">
-            <p><b>Matriculation</b></p>
-            <p>Kerala Public School – 81.14%</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>📜 Certifications & Achievements</h2>
-        <div class="card">
-            <p>• Wireman Control Panel (NSDC)</p>
-            <p>• JobReady Employability Skills</p>
-            <p>• Advance Project Management</p>
-            <p>• Inspire Award (Jharkhand Govt)</p>
-            <p>• Project: VI Characteristics Test Panel</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>🤝 Soft Skills</h2>
-        <div class="skills">
-            <span>Ownership</span>
-            <span>Problem Solving</span>
-            <span>Time Management</span>
-            <span>Communication</span>
-            <span>Analytical Thinking</span>
+            <p>Diploma in Electrical & Electronics Engineering</p>
         </div>
     </div>
 
