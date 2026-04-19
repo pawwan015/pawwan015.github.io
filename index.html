@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Pawan Kumar | Electrical Engineer</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -21,7 +22,7 @@
 
         .header {
             text-align: center;
-            padding: 30px 10px;
+            padding: 40px 10px;
         }
 
         .header h1 {
@@ -32,6 +33,12 @@
         .header p {
             color: #94a3b8;
             font-size: 16px;
+        }
+
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .section {
@@ -51,10 +58,6 @@
             margin-top: 15px;
         }
 
-        .card h3 {
-            margin: 0 0 10px;
-        }
-
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -72,7 +75,6 @@
             padding-left: 20px;
         }
 
-        /* MOBILE */
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 26px;
@@ -84,10 +86,6 @@
 
             .header p {
                 font-size: 14px;
-            }
-
-            .card {
-                padding: 12px;
             }
         }
     </style>
@@ -101,7 +99,17 @@
     <div class="header">
         <h1>B Pawan Kumar</h1>
         <p>Electrical & Electronics Engineer</p>
-        <p>📍 Gurgaon |</p> <p>📧 <a href="mailto:pawanbrao720@gmail.com">pawanbrao720@gmail.com</a></p>
+
+        <div class="contact">
+            <p>📍 Gurgaon</p>
+
+            <!-- ✅ CLICKABLE EMAIL -->
+            <p>📧 
+                <a href="mailto:pawanbrao720@gmail.com?subject=Opportunity&body=Hello Pawan, I saw your portfolio">
+                    pawanbrao720@gmail.com
+                </a>
+            </p>
+        </div>
     </div>
 
     <!-- ABOUT -->
@@ -109,9 +117,9 @@
         <h2>About Me</h2>
         <div class="card">
             <p>
-                A motivated and disciplined engineer with hands-on experience in industrial motor repair, diagnostics,
-                and automation systems. Proven ability to independently manage repair operations, troubleshoot complex
-                faults, and deliver high-quality results with a 95%+ success rate.
+                A motivated and disciplined engineer with hands-on experience in industrial motor repair,
+                diagnostics, and automation systems. Proven ability to troubleshoot complex faults and
+                deliver high-quality results with a 95%+ success rate.
             </p>
         </div>
     </div>
@@ -136,51 +144,21 @@
         <h2>Experience</h2>
 
         <div class="card">
-            <h3>Deputy Engineer – FANUC India (Present)</h3>
+            <h3>Deputy Engineer – FANUC India</h3>
             <ul>
-                <li>Handled 30+ servo & spindle motor repairs monthly</li>
-                <li>Complete ownership: dismantling → repair → testing → delivery</li>
-                <li>Maintained 95%+ first-time-right repair success rate</li>
-                <li>Worked on encoders, windings, bearings, brake systems, PCBs</li>
-                <li>Used oscilloscope, megger, multimeter for diagnostics</li>
-                <li>Collaborated with field engineers on complex issues</li>
+                <li>Handled 30+ motor repairs monthly</li>
+                <li>95%+ first-time-right repair success</li>
+                <li>Worked on encoders, windings, bearings</li>
+                <li>Used oscilloscope, megger, multimeter</li>
             </ul>
         </div>
 
         <div class="card">
-            <h3>Trainee Engineer – FANUC India (2024–2025)</h3>
+            <h3>Trainee Engineer</h3>
             <ul>
-                <li>Trained on FANUC drives, motors & controllers</li>
-                <li>Performed component-level diagnostics and repair</li>
-                <li>Read electrical schematics and documentation</li>
+                <li>Trained on FANUC systems</li>
+                <li>Performed diagnostics & repair</li>
             </ul>
-        </div>
-
-        <div class="card">
-            <h3>Intern – FANUC India (2024)</h3>
-            <ul>
-                <li>Training on industrial repair tools & equipment</li>
-                <li>Learned safety protocols and repair workflow</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <!-- PROJECTS -->
-    <div class="section">
-        <h2>Key Work Highlights</h2>
-
-        <div class="card">
-            <h3>Industrial Motor Repair System</h3>
-            <p><b>Problem:</b> Frequent motor failures</p>
-            <p><b>Action:</b> Diagnosed using testing tools</p>
-            <p><b>Solution:</b> Component-level repair</p>
-            <p><b>Result:</b> Improved reliability and reduced failures</p>
-        </div>
-
-        <div class="card">
-            <h3>PMC & Automation Troubleshooting</h3>
-            <p>Configured PMC systems and optimized machine performance.</p>
         </div>
 
     </div>
@@ -190,41 +168,13 @@
         <h2>Education</h2>
 
         <div class="card">
-            <p><b>Diploma in Electrical & Electronics Engineering</b></p>
-            <p>Tata Steel Technical Institute – 74.4%</p>
+            <p>Diploma in Electrical & Electronics Engineering</p>
         </div>
 
         <div class="card">
-            <p><b>Matriculation</b></p>
-            <p>Kerala Public School – 81.14%</p>
+            <p>Matriculation – Kerala Public School</p>
         </div>
 
-    </div>
-
-    <!-- CERTIFICATIONS -->
-    <div class="section">
-        <h2>Certifications</h2>
-        <div class="card">
-            <ul>
-                <li>Wireman Control Panel (NSDC)</li>
-                <li>JobReady Employability Skills</li>
-                <li>Advance Project Management</li>
-                <li>Inspire Award (Jharkhand Govt)</li>
-                <li>VI Characteristics Test Panel Project</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- SOFT SKILLS -->
-    <div class="section">
-        <h2>Soft Skills</h2>
-        <div class="skills">
-            <span>Ownership</span>
-            <span>Problem Solving</span>
-            <span>Time Management</span>
-            <span>Communication</span>
-            <span>Analytical Thinking</span>
-        </div>
     </div>
 
 </div>
