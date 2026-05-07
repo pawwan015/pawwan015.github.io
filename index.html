@@ -1,61 +1,986 @@
-<div class="section-heading">
-  <h2>About Me</h2>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B Pawan Kumar | Electrical Engineer</title>
 
-<section class="section" id="skills">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Core Skills</h2>
+  <style>
+    :root {
+      --bg: #08111f;
+      --surface: #111c2e;
+      --text: #f8fafc;
+      --muted: #a7b5c8;
+      --line: rgba(148, 163, 184, 0.22);
+      --primary: #38bdf8;
+      --accent: #22c55e;
+      --shadow: 0 20px 60px rgba(2, 8, 23, 0.35);
+    }
+
+    [data-theme="light"] {
+      --bg: #eef5fb;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #526174;
+      --line: rgba(15, 23, 42, 0.14);
+      --primary: #0369a1;
+      --accent: #15803d;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(56, 189, 248, 0.16), transparent 28rem),
+        radial-gradient(circle at 85% 15%, rgba(34, 197, 94, 0.12), transparent 26rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: color-mix(in srgb, var(--bg) 84%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 70px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #00111f;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a,
+    .icon-btn,
+    .btn {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      background: color-mix(in srgb, var(--surface) 80%, transparent);
+      transition: 0.2s ease;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover,
+    .icon-btn:hover,
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--primary);
+    }
+
+    .icon-btn {
+      display: inline-grid;
+      place-items: center;
+      width: 54px;
+      cursor: pointer;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 34px;
+      align-items: center;
+      min-height: calc(100vh - 70px);
+      padding: 54px 0 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      margin: 0 0 12px;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 84px);
+      line-height: 0.95;
+      margin: 0 0 18px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-text {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0 0 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #00111f;
+    }
+
+    .hero-panel,
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel {
+      padding: 22px;
+    }
+
+    .status-card {
+      display: grid;
+      gap: 16px;
+    }
+
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+    }
+
+    .status-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .status-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status-value {
+      text-align: right;
+      font-weight: 800;
+    }
+
+    .section {
+      padding: 54px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .section-heading p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 18px;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    .meta {
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 19px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .search {
+      flex: 1 1 240px;
+      min-height: 44px;
+      padding: 0 14px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      min-height: 44px;
+      padding: 0 13px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #00111f;
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      border-radius: 8px;
+      padding: 0 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .skill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-card {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 24px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .result {
+      display: inline-flex;
+      margin-top: 6px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+      transition: 0.22s ease;
+      z-index: 40;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .mobile-menu-btn {
+        display: inline-grid;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 4%;
+        right: 4%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .section {
+        padding: 38px 0;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .status-row {
+        display: block;
+      }
+
+      .status-value {
+        text-align: left;
+        margin-top: 3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="container nav">
+      <a class="brand" href="#home">
+        <span class="brand-mark">BP</span>
+        <span>B Pawan Kumar</span>
+      </a>
+
+      <div class="nav-links" id="navLinks"></div>
+
+      <div>
+        <button class="icon-btn" id="themeToggle" type="button">Sun</button>
+        <button class="icon-btn mobile-menu-btn" id="menuToggle" type="button">Menu</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="container hero">
+      <div>
+        <p class="eyebrow">
+          <span class="pulse"></span>
+          <span id="availability"></span>
+        </p>
+
+        <h1>Electrical Engineer <span>building with AI.</span></h1>
+        <p class="hero-text" id="heroSummary"></p>
+
+        <div class="hero-actions">
+          <a class="btn primary" id="emailButton">Contact Me</a>
+          <button class="btn" id="copyEmailButton" type="button">Copy Email</button>
+          <a class="btn" href="#experience">View Experience</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <div class="status-card" id="quickStats"></div>
+      </aside>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About Me</h2>
+          <p>Professional summary generated dynamically from one portfolio data object.</p>
+        </div>
+        <div class="card">
+          <p id="aboutText"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Core Skills</h2>
+          <p>Search and filter skills without changing the HTML structure.</p>
+        </div>
+
+        <div class="controls">
+          <input class="search" id="skillSearch" type="search" placeholder="Search skills..." />
+          <div class="filter-group" id="skillFilters"></div>
+        </div>
+
+        <div class="skills-wrap" id="skillsList"></div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Experience</h2>
+          <p>Rendered from JavaScript arrays, so new roles can be added in one place.</p>
+        </div>
+        <div class="timeline" id="experienceList"></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Key Work Highlights</h2>
+          <p>Problem, action, solution, and result format for recruiter-friendly storytelling.</p>
+        </div>
+        <div class="grid two" id="projectsList"></div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Education & Certifications</h2>
+          <p>Cleanly separated data for education, certificates, and soft skills.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="grid" id="educationList"></div>
+          <div class="grid" id="certificationList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="soft-skills">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Soft Skills</h2>
+          <p>Personal strengths that support technical ownership.</p>
+        </div>
+        <div class="skills-wrap" id="softSkillsList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span id="footerText"></span>
     </div>
+  </footer>
 
-    <div class="controls">
-      <input class="search" id="skillSearch" type="search" placeholder="Search skills..." />
-      <div class="filter-group" id="skillFilters"></div>
-    </div>
+  <div class="toast" id="toast"></div>
 
-    <div class="skills-wrap" id="skillsList"></div>
-  </div>
-</section>
+  <script>
+    const portfolio = {
+      name: "B Pawan Kumar",
+      title: "Electrical & Electronics Engineer | AI powered developer (in progress)",
+      email: "pawanbrao720@gmail.com",
+      availability: "Available for engineering and automation opportunities",
+      summary: "A motivated and disciplined engineer with hands-on experience in industrial motor repair, diagnostics, and automation systems.",
+      about: "A motivated and disciplined engineer with hands-on experience in industrial motor repair, diagnostics, and automation systems. Proven ability to independently manage repair operations, troubleshoot complex faults, and deliver high-quality results with a 95%+ success rate.",
 
-<section class="section" id="experience">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Experience</h2>
-    </div>
+      stats: [
+        { label: "Current Role", value: "Deputy Engineer" },
+        { label: "Company", value: "FANUC India" },
+        { label: "Monthly Repairs", value: "30+ Motors" },
+        { label: "Repair Success", value: "95%+ FTR" }
+      ],
 
-    <div class="timeline" id="experienceList"></div>
-  </div>
-</section>
+      navItems: [
+        { label: "About", href: "#about" },
+        { label: "Skills", href: "#skills" },
+        { label: "Experience", href: "#experience" },
+        { label: "Highlights", href: "#projects" },
+        { label: "Education", href: "#education" }
+      ],
 
-<section class="section" id="projects">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Key Work Highlights</h2>
-    </div>
+      skills: [
+        { name: "Motor Repair (Servo/Spindle)", category: "Electrical" },
+        { name: "Electrical Troubleshooting", category: "Electrical" },
+        { name: "PLC S7-300 / S7-1200", category: "Automation" },
+        { name: "SCADA (WinCC)", category: "Automation" },
+        { name: "Circuit Analysis", category: "Electrical" },
+        { name: "SAP S/4 HANA", category: "Tools" },
+        { name: "Automation", category: "Automation" },
+        { name: "Multimeter / Megger / Oscilloscope", category: "Tools" }
+      ],
 
-    <div class="grid two" id="projectsList"></div>
-  </div>
-</section>
+      experience: [
+        {
+          role: "Deputy Engineer",
+          company: "FANUC India",
+          period: "Present",
+          points: [
+            "Handled 30+ servo and spindle motor repairs monthly",
+            "Managed complete ownership from dismantling to repair, testing, and delivery",
+            "Maintained 95%+ first-time-right repair success rate",
+            "Worked on encoders, windings, bearings, brake systems, and PCBs",
+            "Used oscilloscope, megger, and multimeter for diagnostics",
+            "Collaborated with field engineers on complex technical issues"
+          ]
+        },
+        {
+          role: "Trainee Engineer",
+          company: "FANUC India",
+          period: "2024 - 2025",
+          points: [
+            "Trained on FANUC drives, motors, and controllers",
+            "Performed component-level diagnostics and repair",
+            "Read electrical schematics and technical documentation"
+          ]
+        },
+        {
+          role: "Intern",
+          company: "FANUC India",
+          period: "2024",
+          points: [
+            "Trained on industrial repair tools and equipment",
+            "Learned safety protocols and structured repair workflow"
+          ]
+        }
+      ],
 
-<section class="section" id="education">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Education & Certifications</h2>
-    </div>
+      projects: [
+        {
+          title: "Industrial Motor Repair System",
+          problem: "Frequent motor failures",
+          action: "Diagnosed failures using testing tools and structured inspection",
+          solution: "Performed component-level repair and validation",
+          result: "Improved reliability and reduced repeated failures"
+        },
+        {
+          title: "PMC & Automation Troubleshooting",
+          problem: "Machine performance and control issues",
+          action: "Analyzed PMC logic and automation behavior",
+          solution: "Configured PMC systems and optimized machine performance",
+          result: "Improved troubleshooting speed and operational stability"
+        }
+      ],
 
-    <div class="grid two">
-      <div class="grid" id="educationList"></div>
-      <div class="grid" id="certificationList"></div>
-    </div>
-  </div>
-</section>
+      education: [
+        {
+          title: "Diploma in Electrical & Electronics Engineering",
+          institute: "Tata Steel Technical Institute",
+          score: "74.4%"
+        },
+        {
+          title: "Matriculation",
+          institute: "Kerala Public School",
+          score: "81.14%"
+        }
+      ],
 
-<section class="section" id="soft-skills">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Soft Skills</h2>
-    </div>
+      certifications: [
+        "Wireman Control Panel (NSDC)",
+        "JobReady Employability Skills",
+        "Advance Project Management",
+        "Inspire Award (Jharkhand Govt)",
+        "VI Characteristics Test Panel Project"
+      ],
 
-    <div class="skills-wrap" id="softSkillsList"></div>
-  </div>
-</section>
+      softSkills: [
+        "Ownership",
+        "Problem Solving",
+        "Time Management",
+        "Communication",
+        "Analytical Thinking"
+      ]
+    };
+
+    const state = {
+      activeSkillCategory: "All",
+      skillSearch: ""
+    };
+
+    const $ = (selector) => document.querySelector(selector);
+
+    function createElement(tag, className, text) {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (text) element.textContent = text;
+      return element;
+    }
+
+    function showToast(message) {
+      const toast = $("#toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2200);
+    }
+
+    function renderNavigation() {
+      const navLinks = $("#navLinks");
+      navLinks.innerHTML = "";
+
+      portfolio.navItems.forEach((item) => {
+        const link = createElement("a", "", item.label);
+        link.href = item.href;
+
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+        });
+
+        navLinks.appendChild(link);
+      });
+    }
+
+    function renderHero() {
+      $("#availability").textContent = portfolio.availability;
+      $("#heroSummary").textContent = `${portfolio.title}. ${portfolio.summary}`;
+      $("#aboutText").textContent = portfolio.about;
+
+      $("#emailButton").href =
+        `mailto:${portfolio.email}?subject=Job%20Opportunity&body=Hello%20Pawan,%20I%20saw%20your%20portfolio`;
+
+      $("#footerText").textContent =
+        `Copyright ${new Date().getFullYear()} ${portfolio.name}. Built as a dynamic portfolio.`;
+
+      const quickStats = $("#quickStats");
+      quickStats.innerHTML = "";
+
+      portfolio.stats.forEach((stat) => {
+        const row = createElement("div", "status-row");
+
+        row.innerHTML = `
+          <span class="status-label">${stat.label}</span>
+          <span class="status-value">${stat.value}</span>
+        `;
+
+        quickStats.appendChild(row);
+      });
+    }
+
+    function renderSkillFilters() {
+      const categories = [
+        "All",
+        ...new Set(portfolio.skills.map((skill) => skill.category))
+      ];
+
+      const filterContainer = $("#skillFilters");
+      filterContainer.innerHTML = "";
+
+      categories.forEach((category) => {
+        const button = createElement("button", "filter-btn", category);
+        button.type = "button";
+
+        if (state.activeSkillCategory === category) {
+          button.classList.add("active");
+        }
+
+        button.addEventListener("click", () => {
+          state.activeSkillCategory = category;
+          renderSkillFilters();
+          renderSkills();
+        });
+
+        filterContainer.appendChild(button);
+      });
+    }
+
+    function renderSkills() {
+      const skillsList = $("#skillsList");
+      const search = state.skillSearch.toLowerCase().trim();
+
+      const filteredSkills = portfolio.skills.filter((skill) => {
+        const matchesCategory =
+          state.activeSkillCategory === "All" ||
+          skill.category === state.activeSkillCategory;
+
+        const matchesSearch = skill.name.toLowerCase().includes(search);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      skillsList.innerHTML = "";
+
+      if (!filteredSkills.length) {
+        skillsList.appendChild(createElement("p", "", "No skills found."));
+        return;
+      }
+
+      filteredSkills.forEach((skill) => {
+        const pill = createElement("span", "skill-pill");
+        pill.innerHTML = `<span class="skill-dot"></span>${skill.name}`;
+        skillsList.appendChild(pill);
+      });
+    }
+
+    function renderExperience() {
+      const experienceList = $("#experienceList");
+      experienceList.innerHTML = "";
+
+      portfolio.experience.forEach((job) => {
+        const card = createElement("article", "card timeline-card");
+
+        card.innerHTML = `
+          <div class="meta">${job.period}</div>
+          <h3>${job.role} - ${job.company}</h3>
+          <ul>
+            ${job.points.map((point) => `<li>${point}</li>`).join("")}
+          </ul>
+        `;
+
+        experienceList.appendChild(card);
+      });
+    }
+
+    function renderProjects() {
+      const projectsList = $("#projectsList");
+      projectsList.innerHTML = "";
+
+      portfolio.projects.forEach((project) => {
+        const card = createElement("article", "card");
+
+        card.innerHTML = `
+          <h3>${project.title}</h3>
+          <p><strong>Problem:</strong> ${project.problem}</p>
+          <p><strong>Action:</strong> ${project.action}</p>
+          <p><strong>Solution:</strong> ${project.solution}</p>
+          <span class="result">${project.result}</span>
+        `;
+
+        projectsList.appendChild(card);
+      });
+    }
+
+    function renderEducation() {
+      const educationList = $("#educationList");
+      const certificationList = $("#certificationList");
+
+      educationList.innerHTML = "";
+      certificationList.innerHTML = "";
+
+      portfolio.education.forEach((item) => {
+        const card = createElement("article", "card");
+
+        card.innerHTML = `
+          <h3>${item.title}</h3>
+          <p>${item.institute}</p>
+          <span class="result">${item.score}</span>
+        `;
+
+        educationList.appendChild(card);
+      });
+
+      const certificationCard = createElement("article", "card");
+
+      certificationCard.innerHTML = `
+        <h3>Certifications</h3>
+        <ul>
+          ${portfolio.certifications.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+      `;
+
+      certificationList.appendChild(certificationCard);
+    }
+
+    function renderSoftSkills() {
+      const softSkillsList = $("#softSkillsList");
+      softSkillsList.innerHTML = "";
+
+      portfolio.softSkills.forEach((skill) => {
+        const pill = createElement("span", "skill-pill");
+        pill.innerHTML = `<span class="skill-dot"></span>${skill}`;
+        softSkillsList.appendChild(pill);
+      });
+    }
+
+    function setupInteractions() {
+      $("#menuToggle").addEventListener("click", () => {
+        $("#navLinks").classList.toggle("open");
+      });
+
+      $("#themeToggle").addEventListener("click", () => {
+        const isLight = document.body.dataset.theme === "light";
+
+        document.body.dataset.theme = isLight ? "dark" : "light";
+        $("#themeToggle").textContent = isLight ? "Sun" : "Moon";
+
+        localStorage.setItem("portfolio-theme", document.body.dataset.theme);
+      });
+
+      $("#copyEmailButton").addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(portfolio.email);
+          showToast("Email copied successfully");
+        } catch (error) {
+          showToast(portfolio.email);
+        }
+      });
+
+      $("#skillSearch").addEventListener("input", (event) => {
+        state.skillSearch = event.target.value;
+        renderSkills();
+      });
+    }
+
+    function loadTheme() {
+      const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+      document.body.dataset.theme = savedTheme;
+      $("#themeToggle").textContent = savedTheme === "light" ? "Moon" : "Sun";
+    }
+
+    function initPortfolio() {
+      loadTheme();
+      renderNavigation();
+      renderHero();
+      renderSkillFilters();
+      renderSkills();
+      renderExperience();
+      renderProjects();
+      renderEducation();
+      renderSoftSkills();
+      setupInteractions();
+    }
+
+    initPortfolio();
+  </script>
+</body>
+</html>
